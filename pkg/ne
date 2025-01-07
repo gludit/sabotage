@@ -1,17 +1,16 @@
 [mirrors]
-http://ne.di.unimi.it/ne-3.1.2.tar.gz
+http://ne.di.unimi.it/ne-3.3.3.tar.gz
 
 [vars]
-filesize=1162536
-sha512=9bf3401380849d5c371c2ea9a282deadcd83d1972dfad01613a0c4378d35b2dafef2c8eeedd017aec50f6b3dd653ae44758cf427f7eb69eee999829f0e7cc56b
-pkgver=2
+filesize=1162423
+sha512=13bf4fae6977230cd7f3b46d12a25a605d2e83e363cf54202dc4b9e8fb19cc51bac5f30611166839bc1f717c5367db272c8d215b8006f7aa9eec312a817d35c7
+pkgver=3
 desc="the nice editor"
 
 [deps]
 curses
 
 [build]
-patch -p1 < "$K"/ne-curses.patch
 sed 's,strip ne,true ne,' -i makefile
 make CC="$CC" \
   OPTS="$optcflags" \
