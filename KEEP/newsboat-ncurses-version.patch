@@ -1,0 +1,15 @@
+--- newsboat.cpp
++++ newsboat.cpp
+@@ -134,9 +134,9 @@
+ #if defined(__GNUC__) && defined(__VERSION__)
+ 		ss << "Compiler: g++ " << __VERSION__ << std::endl;
+ #endif
+-		ss << "ncurses: " << curses_version()
+-			  << " (compiled with " << NCURSES_VERSION << ")"
+-			  << std::endl;
++//		ss << "ncurses: " << curses_version()
++//			  << " (compiled with " << NCURSES_VERSION << ")"
++//			  << std::endl;
+ 		ss << "libcurl: " << curl_version() << " (compiled with "
+ 			  << LIBCURL_VERSION << ")" << std::endl;
+ 		ss << "SQLite: " << sqlite3_libversion()

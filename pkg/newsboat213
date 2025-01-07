@@ -1,0 +1,24 @@
+[mirrors]
+https://newsboat.org/releases/2.13/newsboat-2.13.tar.xz
+
+[deps]
+stfl
+curl
+libxml2
+json-c
+curses
+asciidoc
+
+[vars]
+filesize=460076
+sha512=f7ce9717540e1c38809a44d531d28b26d5f9759479d311c127adec1ed6f3f6e8ad68799559ed31e9ecde7a988a683b0c9f58ff10e8dd4b2de60d75b7f8efe3da
+pkgver=1
+desc="RSS/Atom feed reader for the text console. v2.13 was the last release without rust dependency"
+
+[build]
+patch -p0 < "$K"/newsboat-ncurses-version.patch
+patch -p0 < "$K"/newsboat-fix-64-bit-time_t.patch
+CPPFLAGS="-D_GNU_SOURCE" CFLAGS="$optcflags" CXXFLAGS="$optcflags" \
+LDFLAGS="$optldflags -Wl,-rpath-link=$butch_root_dir$butch_prefix/lib" \
+  make -j$MAKE_THREADS
+make prefix="$butch_prefix" DESTDIR="$butch_install_dir" install

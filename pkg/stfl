@@ -1,0 +1,21 @@
+[mirrors]
+https://fossies.org/linux/misc/old/stfl-0.24.tar.gz
+https://sources.voidlinux.org/stfl-0.24/stfl-0.24.tar.gz
+https://mirrors.mit.edu/macports/distfiles/stfl/stfl-0.24.tar.gz
+
+[vars]
+filesize=45585
+sha512=95df4574b1bc32d795751156dc5b93afbca3ba241607a3a55210c89dda61b9a26ad574bb5f729a0158c9052235dbf63d6c58b38e7f1061d14ab7062af6150fa0
+pkgver=1
+desc='Library which implements a curses-based widget set for text terminals'
+
+[build]
+sed -e 's/ncursesw\/ncurses\.h/curses\.h/' -i stfl_internals.h
+CPPFLAGS="-D_GNU_SOURCE" CFLAGS="$optcflags" CXXFLAGS="$optcflags" \
+LDFLAGS="$optldflags -Wl,-rpath-link=$butch_root_dir$butch_prefix/lib" \
+  make -j$MAKE_THREADS
+make prefix="$butch_prefix" DESTDIR="$butch_install_dir" install
+
+dest=$butch_install_dir$butch_prefix
+
+ln -sf ${dest}/lib/libstfl.so.0.24 ${dest}/lib/libstfl.so.0

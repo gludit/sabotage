@@ -1,0 +1,28 @@
+--- src/cache.cpp
++++ src/cache.cpp
+@@ -8,6 +8,7 @@
+ #include <sqlite3.h>
+ #include <sstream>
+ #include <time.h>
++#include <inttypes.h>
+ 
+ #include "config.h"
+ #include "configcontainer.h"
+@@ -846,7 +847,7 @@
+ 			"pubDate, content, unread, enclosure_url, "
+ 			"enclosure_type, enqueued, base) "
+ 			"VALUES "
+-			"('%q','%q','%q','%q','%q','%u','%q','%d','%q','%q',%d,"
++			"('%q','%q','%q','%q','%q','%" PRId64 "','%q','%d','%q','%q',%d,"
+ 			" "
+ 			"'%q')",
+ 			item->guid(),
+@@ -854,7 +855,7 @@
+ 			item->author_raw(),
+ 			item->link(),
+ 			feedurl,
+-			item->pubDate_timestamp(),
++			(int64_t)item->pubDate_timestamp(),
+ 			item->description_raw(),
+ 			(item->unread() ? 1 : 0),
+ 			item->enclosure_url(),
