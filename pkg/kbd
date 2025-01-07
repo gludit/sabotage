@@ -89,4 +89,5 @@ echo "available keyboard layouts are:"
 find /share/kmap -name '*.kmap' | sort
 exit 1
 EOF
+cp ./loadkeys "$dest"/bin/loadkeys.orig
 chmod +x "$dest"/bin/loadkeys
