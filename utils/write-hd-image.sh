@@ -8,9 +8,9 @@
 MYDIR=$(dirname "$(readlink -f "$0")")
 
 echo_bold() {
-	tput bold
+	echo -e "\033[1m"
 	echo $@
-	tput sgr0
+	echo -e "\033[0m"
 }
 
 usage() {
