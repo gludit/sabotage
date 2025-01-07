@@ -1,9 +1,11 @@
 [mirrors]
-http://sourceforge.net/projects/polyml/files/polyml/5.5.2/polyml.5.5.2.tar.gz
+https://github.com/polyml/polyml/archive/refs/tags/v5.9.1.tar.gz
 
 [vars]
-filesize=5599140
-sha512=248c2a38c4691898bc1243a041f4683bf227d9c8a98c6c3545af2a8a3249ed5ed96f33f90cb2dede8809b42f33c0557650147302cfe046a5fba965ccd93cbc5b
+filesize=3887664
+sha512=e471abef01b7f2bfac6d847904c0fcef6ae5a1356b1246a2e8982d24fd590b49feb03752642efe09d34344b4faf89bc3edd4418e9993e72ea22e5482e6d37271
+tarball=polyml-5.9.1.tar.gz
+pkgver=2
 
 [build]
 [ -n "$CROSS_COMPILE" ] && \
