@@ -1,11 +1,12 @@
 [mirrors]
-http://heanet.dl.sourceforge.net/project/mpg123/mpg123/1.14.4/mpg123-1.14.4.tar.bz2
-http://surfnet.dl.sourceforge.net/project/mpg123/mpg123/1.14.4/mpg123-1.14.4.tar.bz2
-http://switch.dl.sourceforge.net/project/mpg123/mpg123/1.14.4/mpg123-1.14.4.tar.bz2
+https://netcologne.dl.sourceforge.net/project/mpg123/mpg123/1.32.10/mpg123-1.32.10.tar.bz2
+https://fossies.org/linux/misc/mpg123-1.32.10.tar.bz2
 
 [vars]
-filesize=797694
-sha512=bb20de004271ab40ec26da0d4759970d02855970c88d4ca9971b7d41ea72679032619cc952d96d343bd46c6b5eca6e38eb9f000845960bc464894b850b4de014
+filesize=1118315
+sha512=4df3e76cafe642b1df8befaff3d3530150c13446ca7f07b8d527af5b6522e4d2dedd025a3f095f23a51e2318d17e1395de6e55c70e3a90f80017ea0955fe8c1f
+pkgver=2
+desc='Console-based MPEG Audio Player for Layers 1, 2 and 3'
 
 [deps]
 alsa-lib
